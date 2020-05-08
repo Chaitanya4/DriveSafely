@@ -10,14 +10,12 @@ import imutils
 import time
 import dlib
 import cv2
-from flask import Flask,jsonify,render_template,request,redirect
+from flask import Flask,jsonify,render_template,request,redirect,Response
 app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
-
-@app.route('/SomeFunction')
-def SomeFunction():
+def drowsydetect():
         def sound_alarm():
                 # play an alarm sound
                 playsound.playsound("alarm.wav")
@@ -147,14 +145,15 @@ def SomeFunction():
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
          
                 # show the frame
-                cv2.imshow("Frame", frame)
+                #cv2.imshow("Frame", frame)
+                frame = cv2.imencode('.jpg', frame)[1].tobytes()
+                yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
                 key = cv2.waitKey(1) & 0xFF
          
                 # if the `q` key was pressed, break from the loop
                 if key == ord("q"):
                     break
-         
-        # do a bit of cleanup
-        cv2.destroyAllWindows()
-        vs.stop()
-
+@app.route('/video_stream')
+def video_stream():
+    """Video streaming route. Put this in the src attribute of an img tag."""
+    return Response(drowsydetect(),mimetype='multipart/x-mixed-replace; boundary=frame')

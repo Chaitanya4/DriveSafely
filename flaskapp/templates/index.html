@@ -3,17 +3,46 @@
 
 <head>
     <title>Driver Drowsiness Detection</title>
-
+    <style>
+        html,body{
+            background-image: linear-gradient(to right,#f7f7f7, #8cd5f2);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin:0;
+            width:100%;
+            height:100vh;
+        }
+        .button{
+            color: #2e76b5;
+            background-color: #d9e6f2;
+            border: 1px #2e76b5 solid;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showPicture() {
+  var img = document.getElementById('displayimg');
+  img.style.display = "block";
+} 
+function hidePicture() {
+  var img = document.getElementById('displayimg');
+  img.style.display = "none";
+} 
+    </script>
    
 </head>
 
+
 <body>   
-    <h2>Driver Drowsiness Detection System</h2>  
-    <p>Press the button to start the application and q to stop the application</p>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
-        <script type=text/javascript> $(function() { $("#mybutton").click(function (event) { $.getJSON('/SomeFunction', { },
-        function(data) { }); return false; }); }); </script>      
-        <input type = "button" id = "mybutton" value = "Start" />
+    <h2 style="text-align: center;color:#2e76b5;margin: 0; margin-top: 1.5rem; margin-bottom: 0.5rem;">Driver Drowsiness Detection System</h2>    
+    <div style="text-align: center;">
+        <input type = "button"  class = "button" value = "Start" onclick="showPicture()"/>
+        <input type = "button" class = "button" value = "Stop" onclick="hidePicture()"/>
+    </div>
+       
+        <br>
+        <img id = "displayimg" src="{{ url_for('video_stream') }}" style="width: 90%;height: 80vh;margin: auto;display: none;">
 </body>    
 
 </html>
