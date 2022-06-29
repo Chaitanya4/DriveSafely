@@ -14,3 +14,5 @@ For running the project locally, clone it on your local machine and run it.
 Run the project using: python3 main.py
 
 Or directly run the main.py in the python IDLE to run the project.
+
+Made using *Flask* and *Linode* for the [Hashnode](https://hashnode.com/) X [Linode](https://www.linode.com/) Hackathon!
