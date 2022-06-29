@@ -57,7 +57,6 @@ def drowsydetect():
         # right eye, respectively
         (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eye"]
         (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
-
         # start the video stream thread
         print("[INFO] starting video stream thread...")
         vs = VideoStream(src=0).start()
