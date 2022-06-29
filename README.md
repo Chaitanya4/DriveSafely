@@ -9,6 +9,8 @@ The project is built using python and its libraries like flask, openCV, imutils,
 
 The haarcascade_frontalface_default.xml haar cascade is used to detect face and shape_predictor_68_face_landmarks.dat is used to detect left eye and right eye points for EAR calculation
 
+For running the project locally, clone it on your local machine and run it.
+
 Run the project using: python3 main.py
 
 Or directly run the main.py in the python IDLE to run the project.
