@@ -9,7 +9,7 @@ dlib == 19.19.0
 imutils == 0.5.3
 
 # drowsinessdetect/flaskapp/drowsy.py: 6
-numpy == 1.13.3
+numpy == 1.22.0
 
 # drowsinessdetect/flaskapp/drowsy.py: 12
 opencv_contrib_python == 4.2.0.34
