@@ -18,7 +18,7 @@ opencv_contrib_python == 4.2.0.34
 playsound == 1.2.2
 
 # drowsinessdetect/flaskapp/drowsy.py: 1
-scipy == 0.19.1
+scipy == 1.10.0
 
 gunicorn == 20.0.4
 cmake
